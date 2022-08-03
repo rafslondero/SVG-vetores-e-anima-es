@@ -1,0 +1,96 @@
+body {
+ margin: 0;   
+ background-color: #ffead4;
+ overflow-x: hidden;
+}
+
+.container-header {
+    width: 100vw;
+}
+
+.lett-header {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 80%;
+    margin-top: 10%;
+    fill: transparent;
+    animation: lett-preenchimento 0.5s ease-in-out forwards 4s; /*4s pra preencher a letra/aparecer*/
+    /*animando o svg inteiro*/
+    /*chamando animação do keyframes/ o 1s é um delay para ela aparecer*/
+}
+
+.lett-header path { /*o svg do verão fica contornado*/ /*animando só os paths*/
+    stroke-width: 2px;
+    stroke: #be253f;
+    stroke-dasharray: 3000; /*deixa o contorno tracejado*/
+    stroke-dashoffset: 3000; /*movimenta o tracejado/ valor inicial*/
+    animation: lett-tracado 5s ease-in-out forwards 1s; /*2s segundos para aparecer o tracejado*/
+}
+
+h1, h2 {
+    font-family: 'Pacifico', cursive;
+    color: #be253f;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    color: black;
+    font-size: 1em;
+}
+
+.container-cards {
+    display: flex; /*classe pai/ coloca o display flex aqui, as filhas só coloca os atributos*/
+    width: 70%;
+    margin: auto;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    width: 50%;
+    padding: 20px;/*espaçamento interno, ai descola os elemntos um do outro*/
+    margin: 20px;
+}
+
+.lett-footer {
+    width: 60%;
+    /*display: block;
+    margin: auto; só funciona em display block*/
+    fill: white;
+    opacity: 0.8;
+    position: absolute;
+    left: 20%; /*margem da esquerda*/
+    margin-top: 20%;
+}
+
+.container-footer {
+    position: relative;
+}
+
+.footer-creditos {
+    text-align: center;
+    
+}
+
+@keyframes lett-preenchimento { /*@keyframe é usado pra fazer alguma animação*/
+    to {
+        fill: #be253f;
+    }
+}
+
+@keyframes lett-tracado { /*@jeyframe é usado pra fazer alguma animação*/
+    to {
+        stroke-dashoffset: 0;/*valo final*/
+    }
+}
